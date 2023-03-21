@@ -14,8 +14,8 @@ Additionally, the application calculates the average, mean, and median base happ
 Follow these steps to set up the application:
 Clone the repository
 ```
-git clone https://github.com/MitaliSengupta/pokemon.git
-cd pokemon
+git clone https://github.com/MitaliSengupta/pokemon-stats-api.git
+cd pokemon-stats-api
 ```
 Create and activate a virtual environment:
 On Linux and MacOS:
