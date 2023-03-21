@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Pokemon Stats</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.4;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      .table-container {
+        display: table;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .table-container > div {
+        display: table-row;
+      }
+      .table-container > div > div {
+        display: table-cell;
+        padding: 8px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Favorite Pokemon Stats</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Color</th>
+            <th>Moves</th>
+            <th>Base Happiness</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pokemon in pokemon_data %}
+        <tr>
+            <td>{{ pokemon['name'] }}</td>
+            <td>{{ pokemon['height'] }}</td>
+            <td>{{ pokemon['weight'] }}</td>
+            <td>{{ pokemon['color'] }}</td>
+            <td>{{ pokemon['moves'] }}</td>
+            <td>{{ pokemon['base_happiness'] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="3">Base Happiness Stats</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Average Base Happiness:</td>
+                <td>{{ average_base_happiness }}</td>
+            </tr>
+            <tr>
+                <td>Mean Base Happiness:</td>
+                <td>{{ mean_base_happiness }}</td>
+            </tr>
+            <tr>
+                <td>Median Base Happiness:</td>
+                <td>{{ median_base_happiness }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
